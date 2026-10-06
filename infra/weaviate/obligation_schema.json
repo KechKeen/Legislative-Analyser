@@ -1,0 +1,24 @@
+{
+  "class": "Obligation",
+  "vectorizer": "text2vec-openai",
+  "moduleConfig": {
+    "text2vec-openai": {
+      "model": "text-embedding-3-small",
+      "sourceProperties": ["obligation"],
+      "vectorizeClassName": false
+    }
+  },
+  "properties": [
+    { "name": "obligation_id", "dataType": ["int"] },
+    { "name": "run_id", "dataType": ["uuid"] },
+    { "name": "source", "dataType": ["text"] },
+    { "name": "article_id", "dataType": ["int"] },
+    { "name": "polarity", "dataType": ["text"] },
+    { "name": "obligation", "dataType": ["text"] },
+    { "name": "obligation_references", "dataType": ["text"] },
+    { "name": "created_at", "dataType": ["date"] },
+    { "name": "asset_id", "dataType": ["int"] },
+    { "name": "asset_type", "dataType": ["text"] },
+    { "name": "asset_title", "dataType": ["text"] }
+  ]
+}

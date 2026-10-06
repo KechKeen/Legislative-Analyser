@@ -1,0 +1,16 @@
+{
+  "class": "AssetPartChunk",
+  "vectorizer": "text2vec-openai",
+  "moduleConfig": {
+    "text2vec-openai": {
+      "model": "text-embedding-3-small",
+      "sourceProperties": ["chunk_text_normalized"],
+      "vectorizeClassName": false
+    }
+  },
+  "properties": [
+    { "name": "asset_part_id", "dataType": ["text"] },
+    { "name": "chunk_index", "dataType": ["int"] },
+    { "name": "chunk_text_normalized", "dataType": ["text"] }
+  ]
+}

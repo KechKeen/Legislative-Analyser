@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "legal"
+version = "0.1.0"
+description = "Legal data aggregation platform"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+retrieval-api = { path = "services/retrieval-api", develop = true }
+legal-scripts = { path = "scripts", develop = true }
+
+[tool.poetry.group.dev.dependencies]
+pyright = "~1.1"
+black = "~25.9"
+pytest = "~8.4"
+httpx = "~0.28"
+ruff = "~0.13"
+pre-commit = "~4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+  "infra/*",
+  "dev/*",
+  "*/.venv/*",
+  "migrations/*"
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q"
+testpaths = ["services", "libs", "scripts"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12"
+include = ["services", "libs"]
+typeCheckingMode = "strict"
+reportUnnecessaryTypeIgnoreComment = "warning"
+reportMissingTypeStubs = false

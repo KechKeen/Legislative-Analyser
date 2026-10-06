@@ -1,0 +1,9 @@
+### this has the relevant metadata
+GET http://publications.europa.eu/resource/celex/02016R0679-20160504
+Accept: application/xml;notice=branch
+Accept-Language: en
+
+### from 2, retrieved this manifestation url, contains the full doc
+GET https://publications.europa.eu/resource/cellar/5f2552c2-cc45-11e6-ad7c-01aa75ed71a1.0022.01/DOC_1
+Accept: application/xml;type=fmx4
+Accept-Language: en

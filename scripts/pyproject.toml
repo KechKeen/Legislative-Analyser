@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legal-scripts"
+version = "0.1.0"
+description = "Data pipeline scripts"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic~=2.11",
+    "beautifulsoup4~=4.14",
+    "psycopg[binary]~=3.2",
+    "requests~=2.32",
+    "lxml~=6.0",
+    "openai~=2.6",
+    "tiktoken~=0.11",
+    "weaviate-client~=4.17",
+    "FlagEmbedding~=1.3",
+]
+
+[tool.setuptools]
+py-modules = []
+packages = []

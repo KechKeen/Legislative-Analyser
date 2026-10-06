@@ -1,0 +1,30 @@
+POST http://localhost:8282/v1/graphql
+Content-Type: application/json
+
+{"query":"{ Get { AssetPartChunk(hybrid: { query: \"data protection\", properties: [\"chunk_text_normalized\"], alpha: 0.5 }, limit: 3) { asset_part_id chunk_index chunk_text_normalized _additional { score id explainScore } } } }"}
+
+### Delete all obligations in Weaviate
+DELETE http://localhost:8282/v1/schema/Obligation
+
+
+### Search weaviate chunks via retrieval API
+GET http://localhost:3000/search/chunks?q=data%20protection
+Accept: application/json
+
+
+### Search full asset parts via retrieval API
+GET http://localhost:3000/search?q=data%20protection
+Accept: application/json
+
+### RAG
+GET http://localhost:3000/rag?q=data%20protection
+Accept: application/json
+
+
+### RAG Quuery (Post)
+POST http://localhost:3000/rag
+Accept: application/json
+
+{
+    "query": "Can I record conversations with my client regarding their gdpr rights?"
+}
